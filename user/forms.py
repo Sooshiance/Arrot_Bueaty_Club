@@ -16,7 +16,7 @@ class RegisterUser(forms.ModelForm):
             'username': forms.TextInput(attrs={'class':'form-control my-5', 'placeholder':'Username'}),
             'password': forms.PasswordInput(attrs={'class':'form-control my-5', 'placeholder':'••••••••••••'}),
             'first_name': forms.TextInput(attrs={'class':'form-control my-5', 'placeholder':'Ali'}),
-            'last_name': forms.TextInput(attrs={'class':'form-control my-5', 'placeholder':'alizadeh'}),
+            'last_name': forms.TextInput(attrs={'class':'form-control my-5', 'placeholder':'Alizadeh'}),
         }
 
 

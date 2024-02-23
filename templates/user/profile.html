@@ -13,7 +13,7 @@
                 <div class="col-2">عنوان</div>
                 <div class="col-2">ساعت</div>
                 <div class="col-3">روز</div>
-                <div class="col-2">تایید مدیر</div>
+                <div class="col-2">تایید شد</div>
                 <div class="col-2">تعویض نوبت</div>
                 <div class="col-1">حذف</div>
             </div>
@@ -23,11 +23,11 @@
                     <div class="col-2 mb-3 mt-3 p-3">{{ afield.hour }}</div>
                     <div class="col-3 mb-3 mt-3 p-3">{{ afield.jtime }}</div>
                     {% if afield.admin_approval %}
-                        <div class="col-2 mb-3 mt-3 p-3 h4" style="color: rgb(0, 100, 0);">
+                        <div class="col-2 mb-3 mt-3 p-3 h2" style="color: rgb(0, 100, 0);">
                             <i class="bi bi-check-square-fill"></i>
                         </div>
                     {% else %}
-                        <div class="col-2 mb-3 mt-3 p-3 h4" style="color: red;">
+                        <div class="col-2 mb-3 mt-3 p-3 h2" style="color: red;">
                             <i class="bi bi-x-square-fill"></i>
                         </div>
                     {% endif %}
@@ -46,22 +46,22 @@
                 <div class="col-2">عنوان</div>
                 <div class="col-2">ساعت</div>
                 <div class="col-3">روز</div>
-                <div class="col-2">تایید مدیر</div>
+                <div class="col-2">تایید شد</div>
                 <div class="col-2">تعویض نوبت</div>
                 <div class="col-1">حذف</div>
             </div>
             <div class="row m-2"></div>
             <div class="row mb-4 mt-4">
                 {% for gfield in golsa %}
-                    <div class="col-2 mb-3 mt-3 p-3">{{ gfield.title }}</div>
-                    <div class="col-2 mb-3 mt-3 p-3">{{ gfield.hour }}</div>
-                    <div class="col-3 mb-3 mt-3 p-3">{{ gfield.jtime }}</div>
+                    <div class="col-2 h1 mb-3 mt-3 p-3"> {{ gfield.title }}</div>
+                    <div class="col-2 h1 mb-3 mt-3 p-3"> {{ gfield.hour }}</div>
+                    <div class="col-3 h1 mb-3 mt-3 p-3"> {{ gfield.jtime }}</div>
                     {% if gfield.admin_approval %}
-                        <div class="col-2 mb-3 mt-3 p-3 h4" style="color: rgb(0, 100, 0);">
+                        <div class="col-2 mb-3 mt-3 p-3 h2" style="color: rgb(0, 100, 0);">
                             <i class="bi bi-check-square-fill"></i>
                         </div>
                     {% else %}
-                        <div class="col-2 mb-3 mt-3 p-3 h4" style="color: red;">
+                        <div class="col-2 mb-3 mt-3 p-3 h2" style="color: red;">
                             <i class="bi bi-x-square-fill"></i>
                         </div>
                     {% endif %}
