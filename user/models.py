@@ -1,7 +1,6 @@
 from django.db import models
 from django.core.validators import RegexValidator
-from django.contrib.auth.models import  BaseUserManager, AbstractBaseUser
-from django_jalali.db import models as jmodels
+from django.contrib.auth.models import  BaseUserManager, AbstractBaseUser, PermissionsMixin
 
 
 class AllUser(BaseUserManager):
@@ -64,7 +63,7 @@ class AllUser(BaseUserManager):
         return user
 
 
-class User(AbstractBaseUser):
+class User(AbstractBaseUser, PermissionsMixin):
     alphanumeric = RegexValidator(r'^[0-9a-zA-Z]*$', message='فقط نمادهای الفبایی و اعداد پذیرفته میشوند')
     numbers      = RegexValidator(r'^[0-9a]*$', message='تنها اعداد پذیرفته میشوند')
     phone        = models.CharField(max_length=11, unique=True, validators=[numbers], verbose_name='شماره تماس', help_text='این فیلد برای احراز هویت استفاده میشود، در انتخاب آن دقت کنید')
@@ -75,7 +74,6 @@ class User(AbstractBaseUser):
     is_active    = models.BooleanField(default=False, null=False, verbose_name='وضعیت فعالیت')
     is_staff     = models.BooleanField(default=False, null=False, verbose_name='دسترسی ادمین')
     is_superuser = models.BooleanField(default=False, null=False, verbose_name='مدیر')
-    # joined_at    = jmodels.jDateTimeField(auto_now_add=True, verbose_name='تاریخ عضویت')
 
     objects = AllUser()
 
